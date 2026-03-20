@@ -335,33 +335,30 @@ showGallery()
 },40)
 
 }
-
 function showGallery(){
 
 let gallery=document.getElementById("gallery")
-const song = new Audio('FDownload.app-1558934188547192-(320kbps).mp3')
 gallery.style.display="block"
 
 photos.forEach(p=>{
-
 gallery.innerHTML+=`
-
 <div class="photo">
-
 <h3>كل سنة طيبة 🎉</h3>
-
 <img src="${p.img}">
-
 <h4>${p.text}</h4>
-
 </div>
-
 `
-
 })
-song.play()
+
+// تشغيل الصوت بشكل آمن
+try {
+  const song = new Audio('FDownload.app-1558934188547192-(320kbps).mp3')
+  song.play()
+} catch(e){
+  console.log("الصوت مش شغال")
 }
 
+}
 /* hearts animation */
 
 function hearts(){
